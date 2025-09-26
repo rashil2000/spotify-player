@@ -46,7 +46,7 @@ jobs:
         with:
           use-cross: ${{ matrix.cross_arch }}
           command: build
-          args: --locked --release --target ${{ matrix.target }}
+          args: --locked --release --target ${{ matrix.target }} ${{ contains(matrix.target, 'apple-darwin') && '--features image,fzf' || '' }}
 
       - name: Package
         shell: bash
