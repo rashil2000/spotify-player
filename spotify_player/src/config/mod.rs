@@ -450,7 +450,7 @@ impl AppConfig {
         }
     }
 
-    /// Returns value of SPOTIFY_APP_CLIENT_ID environment variable if found and not empty, else
+    /// Returns value of `SPOTIFY_APP_CLIENT_ID` environment variable if found and not empty, else
     /// Returns stdout of `client_id_command` if set, otherwise it returns the the value of `client_id`
     pub fn get_user_client_id(&self) -> Result<Option<String>> {
         if let Some(os_value) = std::env::var_os("SPOTIFY_APP_CLIENT_ID") {
